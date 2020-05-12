@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import springfox.documentation.builders.RequestHandlerSelectors;
 //import springfox.documentation.builders.PathSelectors;
 //import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -91,6 +92,25 @@ public class SwaggerConfig {
 //		      .paths(PathSelectors.ant("/kuang/**"))
 				.build();
 
+	}
+	
+	/**
+	 * @author 梁淼
+	 * @param environment
+	 * @return
+	 */
+	@Bean
+	public Docket docketHome(Environment environment) {
+		Profiles profiles = Profiles.of("dev");
+		boolean flag = environment.acceptsProfiles(profiles);
+
+		return new Docket(DocumentationType.SWAGGER_2)
+				.groupName("梁淼")
+				.enable(flag)	// enable是否启动swagger
+				.select()
+				// RequestHandlerSelectors扫描接口的方式
+				.apis(RequestHandlerSelectors.basePackage("main.web.controller.home"))
+				.build();
 	}
 
 	@ApiOperation("测试的接口")
