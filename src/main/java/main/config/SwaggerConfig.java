@@ -20,7 +20,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author 007
+ * @author 蒋宁善
  *
  */
 @Configuration // 配置类
@@ -29,7 +29,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 	// 配置文档信息
 	private ApiInfo apiInfo() {
-		Contact contact = new Contact("蒋宁善", "http://123.57.64.120/", "1753291617@qq.com");
+		Contact contact = new Contact("蒋宁善", "http://www.wm2en9.cn/", "ester1753291617@163.com");
 		return new ApiInfo("蒋宁善写的", // 标题
 				"wdnmd", // 描述
 				"v1.0.0", // 版本
@@ -93,11 +93,11 @@ public class SwaggerConfig {
 
 	}
 
-	@ApiOperation("测试的接口")
-	@PostMapping("/kuang")
-	@ResponseBody
-	public String kuang(@ApiParam("这个名字会被返回") String username) {
-		return username;
-	}
+//	@ApiOperation("测试的接口")
+//	@PostMapping("/kuang")
+//	@ResponseBody
+//	public String kuang(@ApiParam("这个名字会被返回") String username) {
+//		return username;
+//	}
 
 }

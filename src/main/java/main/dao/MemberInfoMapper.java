@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import main.domin.MemberInfo;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface MemberInfoMapper extends Mapper<MemberInfo> {
 
 	@Results({

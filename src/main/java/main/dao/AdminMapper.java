@@ -14,7 +14,7 @@ import main.domin.Admin;
 import main.dto.AdminRoleDto;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface AdminMapper extends Mapper<Admin> {
 
 	// 获取所有管理员及角色信息

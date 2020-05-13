@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import main.domin.Address;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface AddressMapper extends Mapper<Address> {
 
 }

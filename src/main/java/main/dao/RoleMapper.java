@@ -14,7 +14,7 @@ import main.domin.Role;
 import main.dto.RoleResourceDto;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface RoleMapper extends Mapper<Role> {
 
 	// 获取所有角色，及对应权限

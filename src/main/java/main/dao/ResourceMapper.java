@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import main.domin.Resource;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface ResourceMapper extends Mapper<Resource> {
 
 	// 根据管理员编号获取权限

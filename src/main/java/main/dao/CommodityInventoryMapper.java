@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import main.domin.CommodityInventory;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface CommodityInventoryMapper extends Mapper<CommodityInventory> {
 
 }

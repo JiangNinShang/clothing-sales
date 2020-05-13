@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import main.domin.Member;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface MemberMapper extends Mapper<Member> {
 
 	// 获取所有会员及会员详细信息
