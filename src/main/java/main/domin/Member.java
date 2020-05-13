@@ -25,7 +25,10 @@ public class Member implements Serializable {
 
 	@ApiModelProperty("密码")
 	private String password;
-
+	
+	@ApiModelProperty("颜值加密")
+	private String salt;
+	
 	@ApiModelProperty("会员详细编号")
 	@Column(name = "info_id")
 	private Integer infoId;

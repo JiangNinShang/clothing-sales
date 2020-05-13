@@ -2,6 +2,7 @@
  * 
  */
 package main.config;
+
 import java.util.ArrayList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import springfox.documentation.builders.RequestHandlerSelectors;
 //import springfox.documentation.builders.PathSelectors;
 //import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -63,11 +65,9 @@ public class SwaggerConfig {
 		// 通过 enable() 接收此参数判断是否要显示
 		boolean b = environment.acceptsProfiles(of);
 
-		return new Docket(DocumentationType.SWAGGER_2)
-				.apiInfo(apiInfo())
-				.enable(b) // 配置是否启用Swagger，如果是false，在浏览器将无法访问
+		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).enable(b) // 配置是否启用Swagger，如果是false，在浏览器将无法访问
 				.select()// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口
-//	      .apis(RequestHandlerSelectors.basePackage("main.controller"))
+				.apis(RequestHandlerSelectors.basePackage("main.controller"))
 				// 配置如何通过path过滤,即这里只扫描请求以/kuang开头的接口
 //	      .paths(PathSelectors.ant("/kuang/**"))
 				.build();
@@ -81,16 +81,29 @@ public class SwaggerConfig {
 		// 通过 enable() 接收此参数判断是否要显示
 		boolean b = environment.acceptsProfiles(of);
 
-		return new Docket(DocumentationType.SWAGGER_2)
-				.groupName("张健")
-				.apiInfo(apiInfo1())
-				.enable(b) // 配置是否启用Swagger，如果是false，在浏览器将无法访问
+		return new Docket(DocumentationType.SWAGGER_2).groupName("张健").apiInfo(apiInfo1()).enable(b) // 配置是否启用Swagger，如果是false，在浏览器将无法访问
 				.select()// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口
 //		      .apis(RequestHandlerSelectors.basePackage("main.controller"))
 				// 配置如何通过path过滤,即这里只扫描请求以/kuang开头的接口
 //		      .paths(PathSelectors.ant("/kuang/**"))
 				.build();
 
+	}
+
+	/**
+	 * @author 梁淼
+	 * @param environment
+	 * @return
+	 */
+	@Bean
+	public Docket docketHome(Environment environment) {
+		Profiles profiles = Profiles.of("dev");
+		boolean flag = environment.acceptsProfiles(profiles);
+
+		return new Docket(DocumentationType.SWAGGER_2).groupName("梁淼").enable(flag) // enable是否启动swagger
+				.select()
+				// RequestHandlerSelectors扫描接口的方式
+				.apis(RequestHandlerSelectors.basePackage("main.web.controller.home")).build();
 	}
 
 //	@ApiOperation("测试的接口")
