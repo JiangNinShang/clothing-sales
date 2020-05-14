@@ -32,6 +32,11 @@ public class CommodityRelease implements Serializable {
 	@Column(name = "commodity_id")
 	private Integer commodityId;
 
+	/**
+	 * @author 梁淼 
+	 */
+	private Commodity commodity;
+	
 	public CommodityRelease() {
 		// TODO Auto-generated constructor stub
 	}
@@ -83,6 +88,15 @@ public class CommodityRelease implements Serializable {
 
 	public void setCommodityId(Integer commodityId) {
 		this.commodityId = commodityId;
+	}
+
+	
+	public Commodity getCommodity() {
+		return commodity;
+	}
+
+	public void setCommodity(Commodity commodity) {
+		this.commodity = commodity;
 	}
 
 	@Override
