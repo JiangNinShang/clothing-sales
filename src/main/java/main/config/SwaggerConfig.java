@@ -105,6 +105,22 @@ public class SwaggerConfig {
 				// RequestHandlerSelectors扫描接口的方式
 				.apis(RequestHandlerSelectors.basePackage("main.web.controller.home")).build();
 	}
+	
+	/**
+	 * @author 王李辉
+	 * @param environment
+	 * @return
+	 */
+	@Bean
+	public Docket docketWang(Environment environment) {
+		Profiles profiles = Profiles.of("dev");
+		boolean flag = environment.acceptsProfiles(profiles);
+
+		return new Docket(DocumentationType.SWAGGER_2).groupName("王李辉").enable(flag) // enable是否启动swagger
+				.select()
+				// RequestHandlerSelectors扫描接口的方式
+				.apis(RequestHandlerSelectors.basePackage("main.web.controller.wang")).build();
+	}
 
 //	@ApiOperation("测试的接口")
 //	@PostMapping("/kuang")
