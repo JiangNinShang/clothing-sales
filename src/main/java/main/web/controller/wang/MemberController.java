@@ -31,17 +31,17 @@ public class MemberController {
 	 * 
 	 * @Date:4月29日 15:44
 	 */
-	@RequestMapping("login")
-	public Member login(String account, String password,HttpSession session) {
-		Date date = new Date();
-		SimpleDateFormat simp = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		Member member = this.memberService.Login(account, password);
-		if(member!=null) {
-			session.setAttribute("account", account);
-			session.setAttribute("simp", simp.format(date));
-		}
-		return member;
-	}
+//	@RequestMapping("login")
+//	public Member login(String account, String password,HttpSession session) {
+//		Date date = new Date();
+//		SimpleDateFormat simp = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+//		Member member = this.memberService.Login(account, password);
+//		if(member!=null) {
+//			session.setAttribute("account", account);
+//			session.setAttribute("simp", simp.format(date));
+//		}
+//		return member;
+//	}
 	
 	/*
 	 * 功能描述：注册方法
@@ -52,11 +52,11 @@ public class MemberController {
 	 * 
 	 * @Date:4月29日 15:44
 	 */
-	@RequestMapping("Register")
-	public int Register(Member member) {
-		member.setInfoId(1);
-		member.setSalt("严值加密");
-		return this.memberService.Registers(member);
-		
-	}
+//	@RequestMapping("Register")
+//	public int Register(Member member) {
+//		member.setInfoId(1);
+//		member.setSalt("严值加密");
+//		return this.memberService.Registers(member);
+//		
+//	}
 }

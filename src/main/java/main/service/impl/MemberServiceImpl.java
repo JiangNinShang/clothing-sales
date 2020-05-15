@@ -3,13 +3,14 @@ package main.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import main.dao.MemberMapper;
 import main.domin.Member;
 import main.service.MemberService;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
-
+@Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
