@@ -26,15 +26,13 @@ public class MemberServiceImpl implements MemberService {
 	 * @Date:4月28日 14:22
 	 */
 	@Override
-	public boolean Login(String account, String password) {
+	public Member Login(String account, String password) {
 		Example example = new Example(Member.class);
 		Criteria criteria = example.createCriteria();
 		criteria.andEqualTo("account", account);
 		criteria.andEqualTo("password", password);
 		Member member = this.memberMapper.selectOneByExample(example);
-		if (member != null)
-			return true;
-		return false;
+		return member;
 	}
 
 	/*
@@ -47,21 +45,8 @@ public class MemberServiceImpl implements MemberService {
 	 * @Date:4月29日 15:44
 	 */
 	@Override
-	public boolean Register(Member member) {
-		return this.memberMapper.insert(member) > 0 ? true : false;
+	public int Registers(Member member) {
+		return this.memberMapper.insertSelective(member);
 	}
 
-	/*
-	 * 功能描述：修改方法
-	 * 
-	 * @author 王李辉
-	 * 
-	 * @Param：Member
-	 * 
-	 * @Date:4月29日 15:44
-	 */
-	@Override
-	public boolean update(Member member) {
-		return this.memberMapper.updateByPrimaryKey(member) > 0 ? true : false;
-	}
 }
