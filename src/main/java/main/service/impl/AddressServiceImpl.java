@@ -8,20 +8,29 @@ import org.springframework.stereotype.Service;
 import main.dao.AddressMapper;
 import main.domin.Address;
 import main.service.AddressService;
+import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.entity.Example.Criteria;
+
 @Service
-public class AddressServiceImpl implements AddressService{
+public class AddressServiceImpl implements AddressService {
 	@Autowired
 	AddressMapper am;
-	/**
-	  *  功能描述: 获取地址的方法
-	 * @author 蒋宁善 	
-	 * @Param: 无
-	 * @Return: List<Address> 地址集合
-	 * @Date: 5月13日09:32
-	 */
+
 	@Override
 	public List<Address> getAddress() {
-		return am.selectAll();
+		Address a = new Address();
+		a.setState('1');
+		return am.select(a);
 	}
 
+	@Override
+	public int deAddress(Integer i) {
+		Example example = new Example(Address.class);
+		// where 条件
+		Criteria criteria = example.createCriteria();
+		criteria.andEqualTo("id", i);
+		Address a = new Address();
+		a.setState('0'); 
+		return am.updateByExampleSelective(a, example);
+	}
 }
