@@ -1,6 +1,7 @@
 package main.domin;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -27,6 +28,10 @@ public class CommodityType implements Serializable {
 	@Column(name = "superior_id")
 	private Integer superiorId;
 
+	
+	@ApiModelProperty("子菜单")
+	private List<CommodityType> childType;
+	
 	public CommodityType() {
 		// TODO Auto-generated constructor stub
 	}
@@ -60,6 +65,15 @@ public class CommodityType implements Serializable {
 
 	public void setSuperiorId(Integer superiorId) {
 		this.superiorId = superiorId;
+	}
+	
+
+	public List<CommodityType> getChildType() {
+		return childType;
+	}
+
+	public void setChildType(List<CommodityType> childType) {
+		this.childType = childType;
 	}
 
 	@Override
