@@ -135,4 +135,12 @@ public class Member implements Serializable {
 				+ memberInfo + "]";
 	}
 
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+
 }

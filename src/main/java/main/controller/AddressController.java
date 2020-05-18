@@ -38,7 +38,6 @@ public class AddressController {
 	@ResponseBody
 	@RequestMapping("deAddress")
 	public int deAddress(@ApiParam("删除的用户编号") int id) {
-		System.out.println(id);
 		return as.deAddress(id);
 	}
 }

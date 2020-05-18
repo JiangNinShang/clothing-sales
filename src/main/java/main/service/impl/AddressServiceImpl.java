@@ -24,7 +24,7 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	@Override
-	public int deAddress(Integer i) {
+	public int deAddress(int i) {
 		Example example = new Example(Address.class);
 		// where 条件
 		Criteria criteria = example.createCriteria();

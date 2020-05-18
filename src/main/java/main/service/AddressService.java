@@ -29,5 +29,5 @@ public interface AddressService {
 	 * @Date: 5月13日15:16
 	 * 
 	 */
-	int deAddress(Integer i);
+	int deAddress(int i);
 }
