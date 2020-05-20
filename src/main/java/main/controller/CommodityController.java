@@ -18,12 +18,12 @@ import main.service.CommodityService;
 public class CommodityController {
 	@Autowired
 	CommodityService cs;
-	
-	@ApiOperation("删除")
+
+	@ApiOperation("获取所有商品")
 	@PostMapping("/deAddress")
 	@ResponseBody
 	@RequestMapping("getCommodity")
-	public List<Commodity> getCommodity(){
+	public List<Commodity> getCommodity() {
 		return cs.getCommodity();
 	}
 }

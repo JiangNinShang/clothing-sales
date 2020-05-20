@@ -19,7 +19,7 @@ public class CommodityServiceImpl implements CommodityService{
 	@Override
 	public List<Commodity> getCommodity() {
 		Commodity a = new Commodity();
-		a.setIsShelves('1');
+		a.setIsShelves('0');
 		return cm.select(a);
 	}
 }
