@@ -30,4 +30,14 @@ public interface AddressService {
 	 * 
 	 */
 	int deAddress(int i);
+	/**
+	 * 功能描述: 添加地址的方法
+	 * 
+	 * @author 蒋宁善
+	 * @Param: a 地址
+	 * @Return: 无
+	 * @Date: 5月13日15:16
+	 * 
+	 */
+	void adAddress(Address a);
 }

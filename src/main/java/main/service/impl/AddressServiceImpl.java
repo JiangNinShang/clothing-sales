@@ -33,4 +33,9 @@ public class AddressServiceImpl implements AddressService {
 		a.setState('0'); 
 		return am.updateByExampleSelective(a, example);
 	}
+
+	@Override
+	public void adAddress(Address a) {
+		am.insert(a);
+	}
 }
