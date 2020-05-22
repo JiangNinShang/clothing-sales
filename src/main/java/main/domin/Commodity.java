@@ -133,4 +133,12 @@ public class Commodity implements Serializable {
 				+ isShelves + ", releaseTime=" + releaseTime + "]";
 	}
 	
+
+	/*
+	 * 刘欢欢
+	 * 折扣价计算
+	 * */
+	public int getZhekoujia() {
+		return (int)(this.price*this.discount);
+	}
 }
