@@ -34,7 +34,6 @@ public class CommodityServiceImpl implements CommodityService {
 
 	@Override
 	public Commodity findCommodity(int id) {
-
 		return this.cm.selectByPrimaryKey(id);
 	}
 }
