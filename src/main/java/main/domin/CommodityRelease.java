@@ -26,7 +26,7 @@ public class CommodityRelease implements Serializable {
 	private String image;
 
 	@ApiModelProperty("内容")
-	private String Integerroduce;
+	private String introduce;
 
 	@ApiModelProperty("商品编号/链接")
 	@Column(name = "commodity_id")
@@ -41,12 +41,12 @@ public class CommodityRelease implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CommodityRelease(Integer id, String code, String image, String Integerroduce, Integer commodityId) {
+	public CommodityRelease(Integer id, String code, String image, String introduce, Integer commodityId) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.image = image;
-		this.Integerroduce = Integerroduce;
+		this.introduce = introduce;
 		this.commodityId = commodityId;
 	}
 
@@ -75,11 +75,11 @@ public class CommodityRelease implements Serializable {
 	}
 
 	public String getIntroduce() {
-		return Integerroduce;
+		return introduce;
 	}
 
-	public void setIntroduce(String Integerroduce) {
-		this.Integerroduce = Integerroduce;
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
 	}
 
 	public Integer getCommodityId() {
@@ -101,7 +101,7 @@ public class CommodityRelease implements Serializable {
 
 	@Override
 	public String toString() {
-		return "CommodityRelease [id=" + id + ", code=" + code + ", image=" + image + ", Integerroduce=" + Integerroduce
+		return "CommodityRelease [id=" + id + ", code=" + code + ", image=" + image + ", introduce=" + introduce
 				+ ", commodityId=" + commodityId + "]";
 	}
 

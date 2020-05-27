@@ -36,4 +36,9 @@ public class CommodityServiceImpl implements CommodityService {
 	public Commodity findCommodity(int id) {
 		return this.cm.selectByPrimaryKey(id);
 	}
+
+	@Override
+	public List<Commodity> all() {
+		return this.cm.queryAll();
+	}
 }

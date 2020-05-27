@@ -18,4 +18,6 @@ public interface CommodityService {
 	 *  查询单个商品
 	 */
 	public Commodity findCommodity(int id);
+	
+	public List<Commodity> all();
 }

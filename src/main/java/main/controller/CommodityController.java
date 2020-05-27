@@ -28,6 +28,6 @@ public class CommodityController {
 	@ResponseBody
 	@RequestMapping("getCommodity")
 	public List<Commodity> getCommodity() {
-		return cs.getCommodity();
+		return cs.all();
 	}
 }
