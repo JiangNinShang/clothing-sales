@@ -1,15 +1,12 @@
 package main.dao;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.*;
 
 import main.domin.CommodityType;
 import main.dto.CommodityTypeDto;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface CommodityTypeMapper extends Mapper<CommodityType> {
 
 	@Select("SELECT type_id FROM tb_commodity$type WHERE commodity_id = #{commodityId}")

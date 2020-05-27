@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import main.domin.CommodityDesign;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface CommodityDesignMapper extends Mapper<CommodityDesign> {
 
 	@Results({
@@ -20,7 +20,7 @@ public interface CommodityDesignMapper extends Mapper<CommodityDesign> {
 		@Result(column = "design_image", property = "designImage"),
 		@Result(column = "design", property = "design"),
 		@Result(column = "id", property = "inventorys",
-			many = @Many(select = "com.newer.dao.CommodityInventoryMapper.gainInventoryByDesignId"))
+			many = @Many(select = "main.dao.CommodityInventoryMapper.gainInventoryByDesignId"))
 	})
 	@Select("SELECT * FROM tb_commodityDesign WHERE commodity_id = #{commodityId}")
 	public List<CommodityDesign> gainDesignByCommodityId(Integer commodityId);

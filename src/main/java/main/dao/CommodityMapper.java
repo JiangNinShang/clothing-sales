@@ -2,16 +2,12 @@ package main.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Many;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.*;
 
 import main.domin.Commodity;
 import tk.mybatis.mapper.common.Mapper;
 
-@Repository
+@org.apache.ibatis.annotations.Mapper
 public interface CommodityMapper extends Mapper<Commodity> {
 
 	// 获取所有商品
@@ -24,9 +20,9 @@ public interface CommodityMapper extends Mapper<Commodity> {
 		@Result(column = "is_shelves", property = "isShelves"),
 		@Result(column = "release_time", property = "releaseTime"),
 		@Result(column = "id", property = "commodityTypeIds",
-			many = @Many(select = "com.newer.dao.CommodityTypeMapper.gainTypeByCommodityId")),
+			many = @Many(select = "main.dao.CommodityTypeMapper.gainTypeByCommodityId")),
 		@Result(column = "id", property = "commodityDesigns",
-			many = @Many(select = "com.newer.dao.CommodityDesignMapper.gainDesignByCommodityId"))
+			many = @Many(select = "main.dao.CommodityDesignMapper.gainDesignByCommodityId"))
 	})
 	@Select("SELECT * FROM tb_commodity")
 	public List<Commodity> gainCommodityAll();

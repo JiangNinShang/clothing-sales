@@ -1,7 +1,9 @@
 package main.domin;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -32,7 +34,7 @@ public class Commodity implements Serializable {
 	private Double price;
 
 	@ApiModelProperty("折扣")
-	private Float discount;
+	private Double discount;
 
 	@ApiModelProperty("介绍")
 	private String introduce;
@@ -45,11 +47,15 @@ public class Commodity implements Serializable {
 	@Column(name = "release_time")
 	private Date releaseTime;
 
+	private Integer[] commodityTypeIds;
+
+	private List<CommodityDesign> commodityDesigns;
+
 	public Commodity() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Commodity(Integer id, String commodityImage, String commodityName, Double price, Float discount,
+	public Commodity(Integer id, String commodityImage, String commodityName, Double price, Double discount,
 			String introduce, Character isShelves, Date releaseTime) {
 		super();
 		this.id = id;
@@ -94,11 +100,11 @@ public class Commodity implements Serializable {
 		this.price = price;
 	}
 
-	public Float getDiscount() {
+	public Double getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(Float discount) {
+	public void setDiscount(Double discount) {
 		this.discount = discount;
 	}
 
@@ -126,19 +132,28 @@ public class Commodity implements Serializable {
 		this.releaseTime = releaseTime;
 	}
 
+	public Integer[] getCommodityTypeIds() {
+		return commodityTypeIds;
+	}
+
+	public void setCommodityTypeIds(Integer[] commodityTypeIds) {
+		this.commodityTypeIds = commodityTypeIds;
+	}
+
+	public List<CommodityDesign> getCommodityDesigns() {
+		return commodityDesigns;
+	}
+
+	public void setCommodityDesigns(List<CommodityDesign> commodityDesigns) {
+		this.commodityDesigns = commodityDesigns;
+	}
+
 	@Override
 	public String toString() {
 		return "Commodity [id=" + id + ", commodityImage=" + commodityImage + ", commodityName=" + commodityName
 				+ ", price=" + price + ", discount=" + discount + ", introduce=" + introduce + ", isShelves="
-				+ isShelves + ", releaseTime=" + releaseTime + "]";
+				+ isShelves + ", releaseTime=" + releaseTime + ", commodityTypeIds=" + Arrays.toString(commodityTypeIds)
+				+ ", commodityDesigns=" + commodityDesigns + "]";
 	}
-	
 
-	/*
-	 * 刘欢欢
-	 * 折扣价计算
-	 * */
-	public int getZhekoujia() {
-		return (int)(this.price*this.discount);
-	}
 }

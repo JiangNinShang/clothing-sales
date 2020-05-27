@@ -24,7 +24,6 @@ public class CommodityTypeServiceImpl implements CommodityTypeService{
 
 	@Override
 	public List<CommodityType> findType() {
-		// TODO Auto-generated method stub
 		return this.ctMapper.selectAll();
 	}
 }
