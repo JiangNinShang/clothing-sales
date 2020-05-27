@@ -28,6 +28,9 @@ public class CommodityController {
 	@ResponseBody
 	@RequestMapping("getCommodity")
 	public List<Commodity> getCommodity() {
+		for(Commodity c :cs.all()) {
+			System.out.println(c.toString());
+		}
 		return cs.all();
 	}
 }
