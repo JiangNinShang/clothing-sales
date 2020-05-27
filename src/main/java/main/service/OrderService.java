@@ -16,5 +16,5 @@ public interface OrderService {
 	 * 
 	 * @Date:4月28日 20:30
 	 */
-	public List<Order> QueryOrder();
+	public List<Order> QueryOrder(Integer memberId);
 }

@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -40,14 +42,17 @@ public class Order implements Serializable {
 	private Character orderState;
 
 	@ApiModelProperty("创建时间")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "creation_time")
 	private Date creationTime;
 
 	@ApiModelProperty("结算时间")
-	@Column(name = "sttle_time")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "settle_time")
 	private Date settleTime;
 
 	@ApiModelProperty("完成时间")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "accomplish_time")
 	private Date accomplishTime;
 
