@@ -25,12 +25,8 @@ public class CommodityController {
 
 	@ApiOperation("获取所有商品")
 	@PostMapping("/deAddress")
-	@ResponseBody
 	@RequestMapping("getCommodity")
 	public List<Commodity> getCommodity() {
-		for(Commodity c :cs.all()) {
-			System.out.println(c.toString());
-		}
 		return cs.all();
 	}
 }

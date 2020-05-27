@@ -34,29 +34,6 @@ public class ShangpinshouController {
 		return this.CommodityTypeService.findType();
 	}
 
-	@RequestMapping("findpage")
-	public List<Commodity> findPage(TiaojianDto dto, String name, String id) {
-		dto.setCommodityName(name);
-		dto.setTypeid(id);
-		if (dto.getCommodityName() == null) {
-			dto.setCommodityName("");
-		}
-		;
-		if (dto.getTypeid() == null) {
-			dto.setTypeid("");
-		}
-		;
-		List<Commodity> pageinfo = this.CommodityService.findPages(dto);
-		return pageinfo;
-	};
-
-	/* 商品详情查询方法 */
-	@RequestMapping("findCommodity")
-	public Commodity findCommodity(String id) {
-		Commodity commodity = this.CommodityService.findCommodity(Integer.parseInt(id));
-		return commodity;
-	}
-
 	@RequestMapping("findkuanshi")
 	public List findkuanshi(String id) {
 		List list = this.CommodityDesignService.findByid(id);
