@@ -1,6 +1,7 @@
 package main.domin;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -30,6 +31,8 @@ public class CommodityDesign implements Serializable {
 	@ApiModelProperty("款式")
 	private String design;
 
+	private List<CommodityInventory> inventorys;
+
 	public CommodityDesign() {
 		// TODO Auto-generated constructor stub
 	}
@@ -54,8 +57,9 @@ public class CommodityDesign implements Serializable {
 		return commodityId;
 	}
 
-	public void setCommodityId(Integer commodityId) {
+	public CommodityDesign setCommodityId(Integer commodityId) {
 		this.commodityId = commodityId;
+		return this;
 	}
 
 	public String getDesignImage() {
@@ -74,10 +78,18 @@ public class CommodityDesign implements Serializable {
 		this.design = design;
 	}
 
+	public List<CommodityInventory> getInventorys() {
+		return inventorys;
+	}
+
+	public void setInventorys(List<CommodityInventory> inventorys) {
+		this.inventorys = inventorys;
+	}
+
 	@Override
 	public String toString() {
 		return "CommodityDesign [id=" + id + ", commodityId=" + commodityId + ", designImage=" + designImage
-				+ ", design=" + design + "]";
+				+ ", design=" + design + ", inventorys=" + inventorys + "]";
 	}
 
 }

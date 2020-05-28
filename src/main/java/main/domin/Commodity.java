@@ -47,7 +47,7 @@ public class Commodity implements Serializable {
 	@Column(name = "release_time")
 	private Date releaseTime;
 
-	private Integer[] commodityTypeIds;
+	private List<Commodity> commodityTypeIds;
 
 	private List<CommodityDesign> commodityDesigns;
 
@@ -132,11 +132,11 @@ public class Commodity implements Serializable {
 		this.releaseTime = releaseTime;
 	}
 
-	public Integer[] getCommodityTypeIds() {
+	public List<Commodity> getCommodityTypeIds() {
 		return commodityTypeIds;
 	}
 
-	public void setCommodityTypeIds(Integer[] commodityTypeIds) {
+	public void setCommodityTypeIds(List<Commodity> commodityTypeIds) {
 		this.commodityTypeIds = commodityTypeIds;
 	}
 
@@ -152,7 +152,7 @@ public class Commodity implements Serializable {
 	public String toString() {
 		return "Commodity [id=" + id + ", commodityImage=" + commodityImage + ", commodityName=" + commodityName
 				+ ", price=" + price + ", discount=" + discount + ", introduce=" + introduce + ", isShelves="
-				+ isShelves + ", releaseTime=" + releaseTime + ", commodityTypeIds=" + Arrays.toString(commodityTypeIds)
+				+ isShelves + ", releaseTime=" + releaseTime + ", commodityTypeIds=" + commodityTypeIds.toString()
 				+ ", commodityDesigns=" + commodityDesigns + "]";
 	}
 

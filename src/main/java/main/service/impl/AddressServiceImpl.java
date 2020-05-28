@@ -17,9 +17,10 @@ public class AddressServiceImpl implements AddressService {
 	AddressMapper am;
 
 	@Override
-	public List<Address> getAddress() {
+	public List<Address> getAddress(int id) {
 		Address a = new Address();
-		a.setState('1');
+		a.setState('0');
+		a.setId(id);
 		return am.select(a);
 	}
 
@@ -30,7 +31,7 @@ public class AddressServiceImpl implements AddressService {
 		Criteria criteria = example.createCriteria();
 		criteria.andEqualTo("id", i);
 		Address a = new Address();
-		a.setState('0'); 
+		a.setState('1'); 
 		return am.updateByExampleSelective(a, example);
 	}
 

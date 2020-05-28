@@ -33,7 +33,6 @@ public class CommodityType implements Serializable {
 	private List<CommodityType> childType;
 	
 	public CommodityType() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public CommodityType(Integer id, String typeName, Integer superiorId) {
@@ -66,12 +65,10 @@ public class CommodityType implements Serializable {
 	public void setSuperiorId(Integer superiorId) {
 		this.superiorId = superiorId;
 	}
-	
 
 	public List<CommodityType> getChildType() {
 		return childType;
 	}
-
 	public void setChildType(List<CommodityType> childType) {
 		this.childType = childType;
 	}
@@ -80,5 +77,4 @@ public class CommodityType implements Serializable {
 	public String toString() {
 		return "CommodityType [id=" + id + ", typeName=" + typeName + ", superiorId=" + superiorId + "]";
 	}
-
 }

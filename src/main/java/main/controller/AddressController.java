@@ -29,8 +29,8 @@ public class AddressController {
 	@PostMapping("/getAddress")
 	@ResponseBody
 	@RequestMapping("getAddress")
-	public List<Address> getAddress() {
-		return as.getAddress();
+	public List<Address> getAddress(int id) {
+		return as.getAddress(id);
 	}
 
 	@ApiOperation("删除")
@@ -49,7 +49,7 @@ public class AddressController {
 			@Param("name") String name, @Param("sity") String sity, @Param("memberId") String phone) {
 		String[] strArr = sity.split(",");
 		Address a = new Address();
-		a.setState('1');
+		a.setState('0');
 		a.setMemberId(memberId);
 		a.setConsigneeName(name);
 		a.setProvince(strArr[0]);

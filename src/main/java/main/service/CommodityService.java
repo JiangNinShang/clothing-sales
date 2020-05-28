@@ -9,4 +9,6 @@ import main.dto.TiaojianDto;
 public interface CommodityService {
 
 	public List<Commodity> all();
+	
+	public List<Commodity> giao(Integer i);
 }
