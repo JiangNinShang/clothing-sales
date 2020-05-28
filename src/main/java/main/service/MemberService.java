@@ -53,4 +53,7 @@ public interface MemberService {
 	 * @Date:4月29日 15:33
 	 */
 	public Member queryMember(Integer id);
+	
+	
+	public Member queryMemberAccount(String account);
 }

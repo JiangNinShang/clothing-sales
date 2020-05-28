@@ -111,4 +111,19 @@ public class MemberController {
 		Member member = this.memberService.queryMember(id);
 		return member;
 	}
+	
+	/*
+	 * 功能描述：根据电话号码查询方法
+	 * 
+	 * @author 王李辉
+	 * 
+	 * @Param：Member
+	 * 
+	 * @Date:4月29日 15:44
+	 */
+	@RequestMapping("queryByAccount")
+	public Member queryByAccount(String account) {
+		Member member = this.memberService.queryMemberAccount(account);
+		return member;
+	}
 }

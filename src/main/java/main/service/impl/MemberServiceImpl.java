@@ -84,4 +84,13 @@ public class MemberServiceImpl implements MemberService {
 		return member;
 	}
 
+	@Override
+	public Member queryMemberAccount(String account) {
+		Example example = new Example(Member.class);
+		Criteria criteria = example.createCriteria();
+		criteria.andEqualTo("account",account);
+		Member member = this.memberMapper.selectOneByExample(example);
+		return member;
+	}
+
 }
