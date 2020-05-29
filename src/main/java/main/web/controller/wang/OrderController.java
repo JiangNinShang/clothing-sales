@@ -30,4 +30,19 @@ public class OrderController {
 		List<Order> order = this.orderService.QueryOrder(memberId);
 		return order;
 	}
+	
+	/*
+	 * 功能描述：链接查询订单方法
+	 * 
+	 * @author 王李辉
+	 * 
+	 * @Param：Order
+	 * 
+	 * @Date:4月29日 15:44
+	 */
+	@RequestMapping("querys")
+	public List<Order> ljxcOrderById(Integer id) {
+		List<Order> order = this.orderService.ljcxOrderById(id);
+		return order;
+	}
 }

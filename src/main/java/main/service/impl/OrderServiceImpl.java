@@ -35,4 +35,10 @@ public class OrderServiceImpl implements OrderService{
 		List<Order> list = this.orderMapper.selectByExample(example);
 		return list;
 	}
+
+	@Override
+	public List<Order> ljcxOrderById(Integer id) {
+		List<Order> list = this.orderMapper.find(id);
+		return list;
+	}
 }

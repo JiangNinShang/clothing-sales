@@ -2,6 +2,7 @@ package main.domin;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -56,6 +57,7 @@ public class Order implements Serializable {
 	@Column(name = "accomplish_time")
 	private Date accomplishTime;
 
+	public List<OrderInfo> a;
 	public Order() {
 		// TODO Auto-generated constructor stub
 	}

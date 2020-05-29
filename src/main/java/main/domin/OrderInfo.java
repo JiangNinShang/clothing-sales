@@ -1,6 +1,7 @@
 package main.domin;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -36,6 +37,10 @@ public class OrderInfo implements Serializable {
 
 	@ApiModelProperty("数量")
 	private Integer count;
+	
+	public Commodity com;
+	
+	public CommodityDesign comdi;
 
 	public OrderInfo() {
 		// TODO Auto-generated constructor stub

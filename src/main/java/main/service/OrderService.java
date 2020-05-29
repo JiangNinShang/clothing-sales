@@ -17,4 +17,15 @@ public interface OrderService {
 	 * @Date:4月28日 20:30
 	 */
 	public List<Order> QueryOrder(Integer memberId);
+	
+	/*
+	 * 功能描述：链接查询所有订单的方法
+	 * 
+	 * @author 王李辉
+	 * 
+	 * @Param：Order
+	 * 
+	 * @Date:4月28日 20:30
+	 */
+	public List<Order> ljcxOrderById(Integer id);
 }
